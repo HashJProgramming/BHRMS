@@ -35,7 +35,164 @@
             <div id="content">
                 <div class="container-fluid">
                     <div class="d-sm-flex justify-content-between align-items-center mb-4">
-                        <h3 class="text-dark mb-0">Rentals</h3>
+                        <h3 class="text-dark mb-0">Rentals - Under Maintenance</h3>
+                    </div>
+                    <div class="card shadow">
+                        <div class="card-header py-3">
+                            <p class="text-primary m-0 fw-bold">Rentals Lists</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6 text-nowrap">
+                                    <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable"><label class="form-label">Show&nbsp;<select class="d-inline-block form-select form-select-sm">
+                                                <option value="10" selected="">10</option>
+                                                <option value="25">25</option>
+                                                <option value="50">50</option>
+                                                <option value="100">100</option>
+                                            </select>&nbsp;</label></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="text-md-end dataTables_filter" id="dataTable_filter"><label class="form-label"><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
+                                </div>
+                            </div>
+                            <div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
+                                <table class="table my-0" id="dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Boarders</th>
+                                            <th>Room</th>
+                                            <th>Type</th>
+                                            <th>Rent</th>
+                                            <th>Start date</th>
+                                            <th>Cellphone</th>
+                                            <th>Status</th>
+                                            <th class="text-center">Options</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar1.jpeg">Airi Satou</td>
+                                            <td>Room #</td>
+                                            <td>Bed Spacer</td>
+                                            <td>₱0.00</td>
+                                            <td>2008/11/28</td>
+                                            <td>00000000000</td>
+                                            <td>Overdue</td>
+                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.html">View</a><button class="btn btn-warning mx-1" type="button" data-bs-target="#update" data-bs-toggle="modal">Update</button><button class="btn btn-danger mx-1" type="button" data-bs-target="#remove" data-bs-toggle="modal">Remove</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar2.jpeg">Angelica Ramos</td>
+                                            <td>Room #</td>
+                                            <td>Bed Spacer</td>
+                                            <td>₱0.00</td>
+                                            <td>2008/11/28</td>
+                                            <td>00000000000</td>
+                                            <td>Regular</td>
+                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.html">View</a><button class="btn btn-warning mx-1" type="button" data-bs-target="#update" data-bs-toggle="modal">Update</button><button class="btn btn-danger mx-1" type="button" data-bs-target="#remove" data-bs-toggle="modal">Remove</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar3.jpeg">Ashton Cox</td>
+                                            <td>Room #</td>
+                                            <td>Bed Spacer</td>
+                                            <td>₱0.00</td>
+                                            <td>2008/11/28</td>
+                                            <td>00000000000</td>
+                                            <td>Advanced</td>
+                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.html">View</a><button class="btn btn-warning mx-1" type="button" data-bs-target="#update" data-bs-toggle="modal">Update</button><button class="btn btn-danger mx-1" type="button" data-bs-target="#remove" data-bs-toggle="modal">Remove</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar4.jpeg">Bradley Greer</td>
+                                            <td>Room #</td>
+                                            <td>Bed Spacer</td>
+                                            <td>₱0.00</td>
+                                            <td>2008/11/28</td>
+                                            <td>00000000000</td>
+                                            <td>00000000000</td>
+                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.html">View</a><button class="btn btn-warning mx-1" type="button" data-bs-target="#update" data-bs-toggle="modal">Update</button><button class="btn btn-danger mx-1" type="button" data-bs-target="#remove" data-bs-toggle="modal">Remove</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar5.jpeg">Brenden Wagner</td>
+                                            <td>Room #</td>
+                                            <td>Bed Spacer</td>
+                                            <td>₱0.00</td>
+                                            <td>2008/11/28</td>
+                                            <td>00000000000</td>
+                                            <td>00000000000</td>
+                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.html">View</a><button class="btn btn-warning mx-1" type="button" data-bs-target="#update" data-bs-toggle="modal">Update</button><button class="btn btn-danger mx-1" type="button" data-bs-target="#remove" data-bs-toggle="modal">Remove</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar1.jpeg">Brielle Williamson</td>
+                                            <td>Room #</td>
+                                            <td>Bed Spacer</td>
+                                            <td>₱0.00</td>
+                                            <td>2008/11/28</td>
+                                            <td>00000000000</td>
+                                            <td>00000000000</td>
+                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.html">View</a><button class="btn btn-warning mx-1" type="button" data-bs-target="#update" data-bs-toggle="modal">Update</button><button class="btn btn-danger mx-1" type="button" data-bs-target="#remove" data-bs-toggle="modal">Remove</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar2.jpeg">Bruno Nash<br></td>
+                                            <td>Room #</td>
+                                            <td>Bed Spacer</td>
+                                            <td>₱0.00</td>
+                                            <td>2008/11/28</td>
+                                            <td>00000000000</td>
+                                            <td>00000000000</td>
+                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.html">View</a><button class="btn btn-warning mx-1" type="button" data-bs-target="#update" data-bs-toggle="modal">Update</button><button class="btn btn-danger mx-1" type="button" data-bs-target="#remove" data-bs-toggle="modal">Remove</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar3.jpeg">Caesar Vance</td>
+                                            <td>Room #</td>
+                                            <td>Bed Spacer</td>
+                                            <td>₱0.00</td>
+                                            <td>2008/11/28</td>
+                                            <td>00000000000</td>
+                                            <td>00000000000</td>
+                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.html">View</a><button class="btn btn-warning mx-1" type="button" data-bs-target="#update" data-bs-toggle="modal">Update</button><button class="btn btn-danger mx-1" type="button" data-bs-target="#remove" data-bs-toggle="modal">Remove</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar4.jpeg">Cara Stevens</td>
+                                            <td>Room #</td>
+                                            <td>Bed Spacer</td>
+                                            <td>₱0.00</td>
+                                            <td>2008/11/28</td>
+                                            <td>00000000000</td>
+                                            <td>00000000000</td>
+                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.html">View</a><button class="btn btn-warning mx-1" type="button" data-bs-target="#update" data-bs-toggle="modal">Update</button><button class="btn btn-danger mx-1" type="button" data-bs-target="#remove" data-bs-toggle="modal">Remove</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar5.jpeg">Cedric Kelly</td>
+                                            <td>Room #</td>
+                                            <td>Bed Spacer</td>
+                                            <td>₱0.00</td>
+                                            <td>2008/11/28</td>
+                                            <td>00000000000</td>
+                                            <td>00000000000</td>
+                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.html">View</a><button class="btn btn-warning mx-1" type="button" data-bs-target="#update" data-bs-toggle="modal">Update</button><button class="btn btn-danger mx-1" type="button" data-bs-target="#remove" data-bs-toggle="modal">Remove</button></td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr></tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 align-self-center">
+                                    <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+                                        <ul class="pagination">
+                                            <li class="page-item disabled"><a class="page-link" aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
+                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
