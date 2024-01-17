@@ -6,4 +6,4 @@ if (session_status() == PHP_SESSION_NONE) {
 generate_logs('Logout', $_SESSION['username'].'User has logged out');
 session_destroy();
 
-header('Location: ../login.php');
+header('Location: ../index.php');

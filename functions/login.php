@@ -25,7 +25,7 @@ if ($user && password_verify($password, $user['password'])) {
         setcookie('password', '', time() - 3600, "/");
     }
     generate_logs('Login', $username.'| Logged in');
-    header('location: ../index.php');
+    header('location: ../dashboard.php');
 } else {
     // Show an error message
     header('location: ../login.php?type=error&message=Wrong username or password');
