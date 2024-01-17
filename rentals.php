@@ -24,12 +24,12 @@
                         </svg></span><a class="navbar-brand d-flex align-items-center" href="/"><span>&nbsp;BHRMS</span></a><button data-bs-toggle="collapse" data-bs-target="#navcol-1" class="navbar-toggler"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navcol-1">
                         <ul class="navbar-nav mx-auto">
-                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-original-title="Here you can see your Dashboard." data-bs-placement="bottom" href="index.html" style="color:#393939;" title="Here you can see your Dashboard."><i class="fas fa-th-list"></i>&nbsp;Dashboard</a></li>
-                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-original-title="Here you can see your Dashboard." data-bs-placement="bottom" href="boarders.html" style="color:#393939;" title="Here you can view and manage the boarders."><i class="fas fa-users"></i>&nbsp;Boarders</a></li>
-                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-original-title="Here you can see your Dashboard." data-bs-placement="bottom" href="rooms.html" style="color:#393939;" title="Here you can view and manage the rooms."><i class="fas fa-home"></i>&nbsp;Rooms</a></li>
-                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-original-title="Here you can see your Dashboard." data-bs-placement="bottom" href="rentals.html" style="color:#393939;" title="Here you can view and transact payments."><i class="fas fa-credit-card"></i>&nbsp;Rental</a></li>
-                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-original-title="Here you can see your Sales &amp; Transactions." data-bs-placement="bottom" href="reports.html" style="color:#393939;" title="Here you can view, export and print the sales reports."><i class="fas fa-chart-pie"></i>&nbsp;Reports</a></li>
-                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-original-title="Here you can manage your account." data-bs-placement="bottom" href="account.html" style="color:#393939;" title="Here you can manage your account."><i class="fas fa-user-shield"></i>&nbsp;My Account</a></li>
+                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-original-title="Here you can see your Dashboard." data-bs-placement="bottom" href="index.php" style="color:#393939;" title="Here you can see your Dashboard."><i class="fas fa-th-list"></i>&nbsp;Dashboard</a></li>
+                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-original-title="Here you can see your Dashboard." data-bs-placement="bottom" href="boarders.php" style="color:#393939;" title="Here you can view and manage the boarders."><i class="fas fa-users"></i>&nbsp;Boarders</a></li>
+                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-original-title="Here you can see your Dashboard." data-bs-placement="bottom" href="rooms.php" style="color:#393939;" title="Here you can view and manage the rooms."><i class="fas fa-home"></i>&nbsp;Rooms</a></li>
+                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-original-title="Here you can see your Dashboard." data-bs-placement="bottom" href="rentals.php" style="color:#393939;" title="Here you can view and transact payments."><i class="fas fa-credit-card"></i>&nbsp;Rental</a></li>
+                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-original-title="Here you can see your Sales &amp; Transactions." data-bs-placement="bottom" href="reports.php" style="color:#393939;" title="Here you can view, export and print the sales reports."><i class="fas fa-chart-pie"></i>&nbsp;Reports</a></li>
+                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-original-title="Here you can manage your account." data-bs-placement="bottom" href="account.php" style="color:#393939;" title="Here you can manage your account."><i class="fas fa-user-shield"></i>&nbsp;My Account</a></li>
                         </ul><a class="btn btn-light shadow" role="button" data-bs-original-title="Here you can logout your acccount." data-bs-placement="left" data-bs-toggle="tooltip" data-bss-tooltip="" href="functions/logout.php">logout</a>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                                             <td>2008/11/28</td>
                                             <td class="text-bg-danger">Overdue</td>
                                             <td>0</td>
-                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.html" data-bs-target="#pay" data-bs-toggle="modal"><i class="far fa-money-bill-alt"></i>&nbsp;Payment</a></td>
+                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.php" data-bs-target="#pay" data-bs-toggle="modal"><i class="far fa-money-bill-alt"></i>&nbsp;Payment</a></td>
                                         </tr>
                                         <tr>
                                             <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar2.jpeg">Angelica Ramos</td>
@@ -90,7 +90,7 @@
                                             <td>2008/11/28</td>
                                             <td class="text-bg-warning">Due</td>
                                             <td>0</td>
-                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.html" data-bs-target="#pay" data-bs-toggle="modal"><i class="far fa-money-bill-alt"></i>&nbsp;Payment</a></td>
+                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.php" data-bs-target="#pay" data-bs-toggle="modal"><i class="far fa-money-bill-alt"></i>&nbsp;Payment</a></td>
                                         </tr>
                                         <tr>
                                             <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar3.jpeg">Ashton Cox</td>
@@ -100,7 +100,7 @@
                                             <td>2008/11/28</td>
                                             <td class="text-bg-danger">Due</td>
                                             <td>0</td>
-                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.html" data-bs-target="#pay" data-bs-toggle="modal"><i class="far fa-money-bill-alt"></i>&nbsp;Payment</a></td>
+                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.php" data-bs-target="#pay" data-bs-toggle="modal"><i class="far fa-money-bill-alt"></i>&nbsp;Payment</a></td>
                                         </tr>
                                         <tr>
                                             <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar4.jpeg">Bradley Greer</td>
@@ -110,7 +110,7 @@
                                             <td>2008/11/28</td>
                                             <td class="text-bg-danger">Due</td>
                                             <td>0</td>
-                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.html" data-bs-target="#pay" data-bs-toggle="modal"><i class="far fa-money-bill-alt"></i>&nbsp;Payment</a></td>
+                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.php" data-bs-target="#pay" data-bs-toggle="modal"><i class="far fa-money-bill-alt"></i>&nbsp;Payment</a></td>
                                         </tr>
                                         <tr>
                                             <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar5.jpeg">Brenden Wagner</td>
@@ -120,7 +120,7 @@
                                             <td>2008/11/28</td>
                                             <td class="text-bg-danger">Due</td>
                                             <td>0</td>
-                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.html" data-bs-target="#pay" data-bs-toggle="modal"><i class="far fa-money-bill-alt"></i>&nbsp;Payment</a></td>
+                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.php" data-bs-target="#pay" data-bs-toggle="modal"><i class="far fa-money-bill-alt"></i>&nbsp;Payment</a></td>
                                         </tr>
                                         <tr>
                                             <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar1.jpeg">Brielle Williamson</td>
@@ -130,7 +130,7 @@
                                             <td>2008/11/28</td>
                                             <td class="text-bg-danger">Due</td>
                                             <td>0</td>
-                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.html" data-bs-target="#pay" data-bs-toggle="modal"><i class="far fa-money-bill-alt"></i>&nbsp;Payment</a></td>
+                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.php" data-bs-target="#pay" data-bs-toggle="modal"><i class="far fa-money-bill-alt"></i>&nbsp;Payment</a></td>
                                         </tr>
                                         <tr>
                                             <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar2.jpeg">Bruno Nash<br></td>
@@ -140,7 +140,7 @@
                                             <td>2008/11/28</td>
                                             <td class="text-bg-danger">Due</td>
                                             <td>0</td>
-                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.html" data-bs-target="#pay" data-bs-toggle="modal"><i class="far fa-money-bill-alt"></i>&nbsp;Payment</a></td>
+                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.php" data-bs-target="#pay" data-bs-toggle="modal"><i class="far fa-money-bill-alt"></i>&nbsp;Payment</a></td>
                                         </tr>
                                         <tr>
                                             <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar3.jpeg">Caesar Vance</td>
@@ -150,7 +150,7 @@
                                             <td>2008/11/28</td>
                                             <td class="text-bg-danger">Due</td>
                                             <td>0</td>
-                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.html" data-bs-target="#pay" data-bs-toggle="modal"><i class="far fa-money-bill-alt"></i>&nbsp;Payment</a></td>
+                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.php" data-bs-target="#pay" data-bs-toggle="modal"><i class="far fa-money-bill-alt"></i>&nbsp;Payment</a></td>
                                         </tr>
                                         <tr>
                                             <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar4.jpeg">Cara Stevens</td>
@@ -160,7 +160,7 @@
                                             <td>2008/11/28</td>
                                             <td class="text-bg-danger">Due</td>
                                             <td>0</td>
-                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.html" data-bs-target="#pay" data-bs-toggle="modal"><i class="far fa-money-bill-alt"></i>&nbsp;Payment</a></td>
+                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.php" data-bs-target="#pay" data-bs-toggle="modal"><i class="far fa-money-bill-alt"></i>&nbsp;Payment</a></td>
                                         </tr>
                                         <tr>
                                             <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar5.jpeg">Cedric Kelly</td>
@@ -170,7 +170,7 @@
                                             <td>2008/11/28</td>
                                             <td class="text-bg-danger">Due</td>
                                             <td>0</td>
-                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.html" data-bs-target="#pay" data-bs-toggle="modal"><i class="far fa-money-bill-alt"></i>&nbsp;Payment</a></td>
+                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.php" data-bs-target="#pay" data-bs-toggle="modal"><i class="far fa-money-bill-alt"></i>&nbsp;Payment</a></td>
                                         </tr>
                                     </tbody>
                                     <tfoot>

@@ -1,0 +1,8 @@
+[Authentication]
+- Login & Logout
+
+[Dashboard]
+- Display Earnings
+- Display Sales Graph
+
+[Boarders]
