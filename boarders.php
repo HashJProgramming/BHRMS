@@ -198,7 +198,10 @@ include_once 'functions/views/get-data.php';
                 <div class="modal-body">
                     <p>Are you sure you want to remove this boarder?</p>
                 </div>
-                <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">No</button><button class="btn btn-danger" type="button">Yes</button></div>
+                <form action="functions/remove-boarder.php" method="post">
+                    <input type="hidden" name="id" value="">
+                    <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">No</button><button class="btn btn-danger" type="submit">Yes</button></div>
+                </form>
             </div>
         </div>
     </div>
