@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Asia/Manila');
 $database = 'bhrms';
 $db = new PDO('mysql:host=localhost', 'root', '');
 $query = "CREATE DATABASE IF NOT EXISTS $database";
@@ -43,6 +44,18 @@ try {
         )
         ");
 
+    $db->exec("
+        CREATE TABLE IF NOT EXISTS payments (
+            id INT PRIMARY KEY AUTO_INCREMENT,
+            boarder INT,
+            room INT,
+            amount DECIMAL(10,2),
+            total DECIMAL(10,2),
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (boarder) REFERENCES boarders(id) ON DELETE CASCADE,
+            FOREIGN KEY (room) REFERENCES rooms(id) ON DELETE CASCADE
+        )
+    ");
 
     $db->exec("
           CREATE TABLE IF NOT EXISTS logs (

@@ -86,8 +86,11 @@ include_once 'functions/connection.php';
                     <h4 class="modal-title">Payment</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
-                        <div class="form-floating mb-3"><input class="form-control form-control" type="number" placeholder="Amount" min="1"><label class="form-label" for="floatingInput">Amount</label></div>
+                    <form action="functions/payment.php" method="post">
+                        <input type="hidden" name="id">
+                        <input type="hidden" name="room">
+                        <input type="hidden" name="total">
+                        <div class="form-floating mb-3"><input class="form-control form-control" type="number" placeholder="Amount" min="1" name="amount"><label class="form-label" for="floatingInput">Amount</label></div>
                     </form>
                 </div>
                 <div class="modal-footer"><button class="btn btn-primary" type="button">Save</button></div>
@@ -108,6 +111,39 @@ include_once 'functions/connection.php';
     <script src="assets/js/theme.js"></script>
     <script src="assets/js/sweetalert.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#dataTable').DataTable({
+                dom: 'Blfrtip',
+                buttons: [{
+                        extend: 'excel',
+                        className: 'btn btn-primary'
+                    },
+                    {
+                        extend: 'pdf',
+                        className: 'btn btn-primary'
+                    },
+                    {
+                        extend: 'print',
+                        className: 'btn btn-primary'
+                    }
+                ]
+            });
+
+            $('a[data-bs-target="#pay"]').on('click', function() {
+                var id = $(this).data('id');
+                var room = $(this).data('room');
+                var total = $(this).data('total');
+                console.log(id, total, room);
+                $('input[name="id"]').val(id);
+                $('input[name="room"]').val(room);
+                $('input[name="amount"]').val(total);
+                $('input[name="total"]').val(total);
+
+            });
+        
+        });
+    </script>
 </body>
 
 </html>
