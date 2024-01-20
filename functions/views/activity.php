@@ -8,7 +8,7 @@ $results = $stmt->fetchAll();
 
 
 foreach ($results as $row) {
-    // get username from users table
+ 
     $sql = 'SELECT username FROM users WHERE id = :id';
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':id', $row['user_id']);

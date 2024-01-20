@@ -1,5 +1,5 @@
 <?php
-    include_once 'functions/authentication.php';
+include_once 'functions/authentication.php';
 ?>
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
@@ -47,19 +47,7 @@
                             <p class="text-primary m-0 fw-bold">Boarders Lists</p>
                         </div>
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-6 text-nowrap">
-                                    <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable"><label class="form-label">Show&nbsp;<select class="d-inline-block form-select form-select-sm">
-                                                <option value="10" selected="">10</option>
-                                                <option value="25">25</option>
-                                                <option value="50">50</option>
-                                                <option value="100">100</option>
-                                            </select>&nbsp;</label></div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="text-md-end dataTables_filter" id="dataTable_filter"><label class="form-label"><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
-                                </div>
-                            </div>
+                            
                             <div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
                                 <table class="table my-0" id="dataTable">
                                     <thead>
@@ -74,118 +62,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar1.jpeg">Airi Satou</td>
-                                            <td>Room #</td>
-                                            <td>Bed Spacer</td>
-                                            <td>₱0.00</td>
-                                            <td>2008/11/28</td>
-                                            <td>00000000000</td>
-                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.php">View</a><button class="btn btn-warning mx-1" type="button" data-bs-target="#update" data-bs-toggle="modal">Update</button><button class="btn btn-danger mx-1" type="button" data-bs-target="#remove" data-bs-toggle="modal">Remove</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar2.jpeg">Angelica Ramos</td>
-                                            <td>Room #</td>
-                                            <td>Bed Spacer</td>
-                                            <td>₱0.00</td>
-                                            <td>2008/11/28</td>
-                                            <td>00000000000</td>
-                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.php">View</a><button class="btn btn-warning mx-1" type="button" data-bs-target="#update" data-bs-toggle="modal">Update</button><button class="btn btn-danger mx-1" type="button" data-bs-target="#remove" data-bs-toggle="modal">Remove</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar3.jpeg">Ashton Cox</td>
-                                            <td>Room #</td>
-                                            <td>Bed Spacer</td>
-                                            <td>₱0.00</td>
-                                            <td>2008/11/28</td>
-                                            <td>00000000000</td>
-                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.php">View</a><button class="btn btn-warning mx-1" type="button" data-bs-target="#update" data-bs-toggle="modal">Update</button><button class="btn btn-danger mx-1" type="button" data-bs-target="#remove" data-bs-toggle="modal">Remove</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar4.jpeg">Bradley Greer</td>
-                                            <td>Room #</td>
-                                            <td>Bed Spacer</td>
-                                            <td>₱0.00</td>
-                                            <td>2008/11/28</td>
-                                            <td>00000000000</td>
-                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.php">View</a><button class="btn btn-warning mx-1" type="button" data-bs-target="#update" data-bs-toggle="modal">Update</button><button class="btn btn-danger mx-1" type="button" data-bs-target="#remove" data-bs-toggle="modal">Remove</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar5.jpeg">Brenden Wagner</td>
-                                            <td>Room #</td>
-                                            <td>Bed Spacer</td>
-                                            <td>₱0.00</td>
-                                            <td>2008/11/28</td>
-                                            <td>00000000000</td>
-                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.php">View</a><button class="btn btn-warning mx-1" type="button" data-bs-target="#update" data-bs-toggle="modal">Update</button><button class="btn btn-danger mx-1" type="button" data-bs-target="#remove" data-bs-toggle="modal">Remove</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar1.jpeg">Brielle Williamson</td>
-                                            <td>Room #</td>
-                                            <td>Bed Spacer</td>
-                                            <td>₱0.00</td>
-                                            <td>2008/11/28</td>
-                                            <td>00000000000</td>
-                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.php">View</a><button class="btn btn-warning mx-1" type="button" data-bs-target="#update" data-bs-toggle="modal">Update</button><button class="btn btn-danger mx-1" type="button" data-bs-target="#remove" data-bs-toggle="modal">Remove</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar2.jpeg">Bruno Nash<br></td>
-                                            <td>Room #</td>
-                                            <td>Bed Spacer</td>
-                                            <td>₱0.00</td>
-                                            <td>2008/11/28</td>
-                                            <td>00000000000</td>
-                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.php">View</a><button class="btn btn-warning mx-1" type="button" data-bs-target="#update" data-bs-toggle="modal">Update</button><button class="btn btn-danger mx-1" type="button" data-bs-target="#remove" data-bs-toggle="modal">Remove</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar3.jpeg">Caesar Vance</td>
-                                            <td>Room #</td>
-                                            <td>Bed Spacer</td>
-                                            <td>₱0.00</td>
-                                            <td>2008/11/28</td>
-                                            <td>00000000000</td>
-                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.php">View</a><button class="btn btn-warning mx-1" type="button" data-bs-target="#update" data-bs-toggle="modal">Update</button><button class="btn btn-danger mx-1" type="button" data-bs-target="#remove" data-bs-toggle="modal">Remove</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar4.jpeg">Cara Stevens</td>
-                                            <td>Room #</td>
-                                            <td>Bed Spacer</td>
-                                            <td>₱0.00</td>
-                                            <td>2008/11/28</td>
-                                            <td>00000000000</td>
-                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.php">View</a><button class="btn btn-warning mx-1" type="button" data-bs-target="#update" data-bs-toggle="modal">Update</button><button class="btn btn-danger mx-1" type="button" data-bs-target="#remove" data-bs-toggle="modal">Remove</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar5.jpeg">Cedric Kelly</td>
-                                            <td>Room #</td>
-                                            <td>Bed Spacer</td>
-                                            <td>₱0.00</td>
-                                            <td>2008/11/28</td>
-                                            <td>00000000000</td>
-                                            <td class="text-center"><a class="btn btn-primary mx-1" role="button" href="profile.php">View</a><button class="btn btn-warning mx-1" type="button" data-bs-target="#update" data-bs-toggle="modal">Update</button><button class="btn btn-danger mx-1" type="button" data-bs-target="#remove" data-bs-toggle="modal">Remove</button></td>
-                                        </tr>
+                                         <?php include_once 'functions/views/boraders.php' ?>
                                     </tbody>
                                     <tfoot>
                                         <tr></tr>
                                     </tfoot>
                                 </table>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6 align-self-center">
-                                    <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-                                        <ul class="pagination">
-                                            <li class="page-item disabled"><a class="page-link" aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
-                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -199,7 +83,7 @@
                     <h4 class="modal-title">Add Boarder</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form action="functions/add-boarder.php" method="POST" enctype="multipart/form-data">
                         <div class="container">
                             <div class="form-floating mb-3"><input class="form-control form-control" type="text" placeholder="Fullname" name="fullname" required=""><label class="form-label" for="floatingInput">Fullname</label></div>
                             <div class="row">
@@ -216,7 +100,7 @@
                             <div class="form-floating mb-3"><input class="form-control form-control" type="text" placeholder="Address" name="address" required=""><label class="form-label" for="floatingInput">Address</label></div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-floating mb-3"><input class="form-control form-control" placeholder="Rent" name="rent" type="date" required=""><label class="form-label" for="floatingInput">Start Date</label></div>
+                                    <div class="form-floating mb-3"><input class="form-control form-control" placeholder="Start Date" name="start_date" type="date" required=""><label class="form-label" for="floatingInput">Start Date</label></div>
                                 </div>
                             </div>
                             <div class="row">
@@ -242,13 +126,13 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer"><button class="btn btn-primary" type="button">Save</button></div>
+                    </div>
+                    <div class="modal-footer"><button class="btn btn-primary" type="submit">Save</button></div>
+                </form>
             </div>
         </div>
     </div>
-    <div class="modal fade" role="dialog" tabindex="-1" id="add-1">
+    <div class="modal fade" role="dialog" tabindex="-1" id="update">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">

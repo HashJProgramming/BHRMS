@@ -11,6 +11,6 @@ $stmt->bindParam(':pax', $pax);
 $stmt->bindParam(':rent', $rent);
 $stmt->execute();
 
-generate_logs('Adding Room', $pax.'| New boarder was added');
-header('Location: ../rooms.php?type=success&message=New boarder was added successfully');
+generate_logs('Adding Room', $pax.'| Room was added successfully');
+header('Location: ../rooms.php?type=success&message=Room was added successfully');
 ?>
