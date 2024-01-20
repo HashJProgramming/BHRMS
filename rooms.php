@@ -112,7 +112,7 @@
                     <h4 class="modal-title">Add Room</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form action="functions/add-room.php" method="POST">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-6">
@@ -123,9 +123,9 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer"><button class="btn btn-primary" type="button">Save</button></div>
+                    </div>
+                    <div class="modal-footer"><button class="btn btn-primary" type="submit">Save</button></div>
+                </form>
             </div>
         </div>
     </div>
