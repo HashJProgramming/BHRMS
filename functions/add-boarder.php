@@ -42,6 +42,25 @@ $stmt->bindParam(':profile', $profile);
 $stmt->bindParam(':proof', $proof);
 $stmt->execute();
 
+$boarder = $db->lastInsertId();
+
+$sql = "SELECT rent FROM rooms WHERE id = :id";
+$stmt = $db->prepare($sql);
+$stmt->bindParam(':id', $room);
+$stmt->execute();
+$rent = $stmt->fetchColumn();
+
+$sql = "INSERT INTO payments (boarder, room, amount, total) VALUES (:boarder, :room, :amount, :total)";
+$stmt = $db->prepare($sql);
+$stmt->bindParam(':boarder', $boarder);
+$stmt->bindParam(':room', $room);
+$stmt->bindParam(':amount', $rent);
+$stmt->bindParam(':total', $rent);
+$stmt->execute();
+
+$paymentId = $db->lastInsertId();
+
 generate_logs('Adding boarder', $fullname . '| New boarder was added');
-header('Location: ../boarders.php?type=success&message=New boarder was added successfully');
+// header('Location: ../boarders.php?type=success&message=New boarder was added successfully');
+header('Location: ../reciept.php?id=' . $paymentId);
 exit;
