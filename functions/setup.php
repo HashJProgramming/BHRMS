@@ -14,6 +14,10 @@ try {
               id INT PRIMARY KEY AUTO_INCREMENT,
               username VARCHAR(255),
               password VARCHAR(255),
+              fullname VARCHAR(255),
+              email VARCHAR(255),
+              phone VARCHAR(255),
+              address VARCHAR(255),
               level VARCHAR(255),
               created_at DATETIME DEFAULT CURRENT_TIMESTAMP
             )

@@ -17,7 +17,7 @@ foreach ($results as $row) {
     ?>
         <tr>
             <td><?php echo $row['id']; ?></td>
-            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/profile.png"><?php echo $user['username'] ?></td>
+            <td><img class="rounded-circle me-2" width="30" height="30" src="https://bootdey.com/img/Content/avatar/avatar7.png"><?php echo $user['username'] ?></td>
             <td><?php echo $row['type'] ?></td>
             <td><?php echo $row['logs'] ?></td>
             <td><?php echo $row['created_at'] ?></td>
