@@ -18,7 +18,7 @@ foreach ($results as $row) {
         <td><?= $row['phone'] ?></td>
         <td class="text-center">
             <a class="btn btn-primary mx-1" role="button" href="profile.php">View</a>
-            <button class="btn btn-warning mx-1" type="button" data-bs-target="#update" data-bs-toggle="modal">Update</button>
+            <button class="btn btn-warning mx-1" type="button" data-bs-target="#update" data-bs-toggle="modal" data-id="<?=$row['id']?>" data-fullname="<?=$row['fullname']?>" data-room="<?=$row['room']?>" data-type="<?=$row['type']?>" data-sex="<?=$row['sex']?>" data-start_date="<?=$row['start_date']?>"  data-phone="<?=$row['phone']?>"  data-address="<?=$row['address']?>">Update</button>
             <button class="btn btn-danger mx-1" type="button" data-bs-target="#remove" data-bs-toggle="modal">Remove</button>
         </td>
     </tr>

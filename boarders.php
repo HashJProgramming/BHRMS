@@ -137,10 +137,11 @@ include_once 'functions/views/get-data.php';
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Update Boarder</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                    <h4 class="modal-title">Add Boarder</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form action="functions/update-boarder.php" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="id" value="">
                         <div class="container">
                             <div class="form-floating mb-3"><input class="form-control form-control" type="text" placeholder="Fullname" name="fullname" required=""><label class="form-label" for="floatingInput">Fullname</label></div>
                             <div class="row">
@@ -148,7 +149,7 @@ include_once 'functions/views/get-data.php';
                                     <div class="form-floating mb-3"><input class="form-control form-control" type="text" placeholder="Phone" name="phone" minlength="11" maxlength="11" required=""><label class="form-label" for="floatingInput">Phone</label></div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-floating"><select class="form-select form-select" aria-label="Floating label select example" id="floatingSelect-4" name="sex" required="">
+                                    <div class="form-floating"><select class="form-select form-select" aria-label="Floating label select example" id="floatingSelect-2" name="sex" required="">
                                             <option value="Male">Male</option>
                                             <option value="Female">Female</option>
                                         </select><label class="form-label" for="floatingSelect">Sex</label></div>
@@ -157,18 +158,17 @@ include_once 'functions/views/get-data.php';
                             <div class="form-floating mb-3"><input class="form-control form-control" type="text" placeholder="Address" name="address" required=""><label class="form-label" for="floatingInput">Address</label></div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-floating mb-3"><input class="form-control form-control" placeholder="Rent" name="rent" type="date" required=""><label class="form-label" for="floatingInput">Start Date</label></div>
+                                    <div class="form-floating mb-3"><input class="form-control form-control" placeholder="Start Date" name="start_date" type="date" required=""><label class="form-label" for="floatingInput">Start Date</label></div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-floating"><select class="form-select form-select" aria-label="Floating label select example" id="floatingSelect-5" name="room" required="">
-                                            <option value="1">Room 1</option>
-                                            <option value="Female">Female</option>
+                                    <div class="form-floating"><select class="form-select form-select" aria-label="Floating label select example" id="floatingSelect-1" name="room" required="">
+                                            <?php room_lists() ?>
                                         </select><label class="form-label" for="floatingSelect">Room#</label></div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-floating"><select class="form-select form-select" aria-label="Floating label select example" id="floatingSelect-6" name="type" required="">
+                                    <div class="form-floating"><select class="form-select form-select" aria-label="Floating label select example" id="floatingSelect-3" name="type" required="">
                                             <option value="Bed Spacer">Bed Spacer</option>
                                             <option value="Regular">Regular</option>
                                         </select><label class="form-label" for="floatingSelect">Type</label></div>
@@ -176,16 +176,16 @@ include_once 'functions/views/get-data.php';
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <div class="mb-3 mt-3"><label class="form-label">Profile Picture</label><input class="form-control" type="file" accept="image/*" name="profile" required=""></div>
+                                    <div class="mb-3 mt-3"><label class="form-label">Profile Picture</label><input class="form-control" type="file" accept="image/*" name="profile"></div>
                                 </div>
                                 <div class="col">
-                                    <div class="mb-3 mt-3"><label class="form-label">Proof of Identity</label><input class="form-control" type="file" accept="image/*" name="proof" required=""></div>
+                                    <div class="mb-3 mt-3"><label class="form-label">Proof of Identity</label><input class="form-control" type="file" accept="image/*" name="proof"></div>
                                 </div>
                             </div>
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer"><button class="btn btn-primary" type="button">Save</button></div>
+                    </div>
+                    <div class="modal-footer"><button class="btn btn-primary" type="submit">Save</button></div>
+                </form>
             </div>
         </div>
     </div>
@@ -216,6 +216,52 @@ include_once 'functions/views/get-data.php';
     <script src="assets/js/theme.js"></script>
     <script src="assets/js/sweetalert.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#dataTable').DataTable({
+                dom: 'Blfrtip',
+                buttons: [{
+                        extend: 'excel',
+                        className: 'btn btn-primary'
+                    },
+                    {
+                        extend: 'pdf',
+                        className: 'btn btn-primary'
+                    },
+                    {
+                        extend: 'print',
+                        className: 'btn btn-primary'
+                    }
+                ]
+            });
+
+            $('button[data-bs-target="#update"]').on('click', function() {
+                var id = $(this).data('id');
+                var fullname = $(this).data('fullname');
+                var room = $(this).data('room');
+                var type = $(this).data('type');
+                var address = $(this).data('address');
+                var phone = $(this).data('phone');
+                var sex = $(this).data('sex');
+                var start_date = $(this).data('start_date');
+                console.log(id, address);
+                $('input[name="id"]').val(id);
+                $('input[name="fullname"]').val(fullname);
+                $('input[name="address"]').val(address);
+                $('input[name="room"]').val(room);
+                $('input[name="type"]').val(type);
+                $('input[name="phone"]').val(phone);
+                $('input[name="sex"]').val(sex);
+                $('input[name="start_date"]').val(start_date);
+            });
+            $('button[data-bs-target="#remove"]').on('click', function() {
+                var id = $(this).data('id');
+                console.log(id);
+                $('input[name="id"]').val(id);
+            });
+
+        });
+    </script>
 </body>
 
 </html>
