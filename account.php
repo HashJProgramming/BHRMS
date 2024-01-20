@@ -54,8 +54,8 @@ include_once 'functions/authentication.php';
                         <div class="card-body">
                             <div class="text-center d-flex flex-column align-items-center"><img class="rounded-circle" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" width="150">
                                 <div class="mt-3">
-                                    <h4>Joshua Ambalong</h4>
-                                    <p class="text-secondary mb-1">Full Stack Developer</p>
+                                    <h4>Administrator</h4>
+                                    <p class="text-secondary mb-1">Administrator</p>
                                     <p class="text-muted font-size-sm">Pagadian City</p>
                                 </div>
                             </div>
@@ -69,7 +69,7 @@ include_once 'functions/authentication.php';
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">Full Name</h6>
                                 </div>
-                                <div class="col-sm-9 text-secondary"><span>Joshua Ambalong</span></div>
+                                <div class="col-sm-9 text-secondary"><span>Administrator</span></div>
                             </div>
                             <hr>
                             <div class="row">
