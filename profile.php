@@ -69,9 +69,9 @@
                                         <hr>
                                         <div class="row">
                                             <div class="col-sm-3">
-                                                <h6 class="mb-0">Allowance</h6>
+                                                <h6 class="mb-0">Room & Rent</h6>
                                             </div>
-                                            <div class="col-sm-9 text-secondary"><span>₱0.00</span></div>
+                                            <div class="col-sm-9 text-secondary"><span>Room #1 | ₱0.00</span></div>
                                         </div>
                                         <hr>
                                         <div class="row">
@@ -89,7 +89,7 @@
                                         </div>
                                         <hr>
                                         <div class="row">
-                                            <div class="col-sm-12"><button class="btn btn-info" type="button" data-bs-target="#edit" data-bs-toggle="modal">Add Allowance</button></div>
+                                            <div class="col-sm-12"><button class="btn btn-info" type="button" data-bs-target="#edit" data-bs-toggle="modal">View Proof of Identity</button></div>
                                         </div>
                                     </div>
                                 </div>

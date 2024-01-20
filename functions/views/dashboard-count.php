@@ -1,149 +1,41 @@
 <?php
 include_once 'functions/connection.php';
 
-function get_monthly(){
+function calculateMonthlyEarnings() {
     global $db;
-    $sql = "SELECT SUM(total) AS total_earnings
-            FROM transactions
-            WHERE MONTH(created_at) = MONTH(CURRENT_TIMESTAMP)
-            AND MONTH(created_at) = MONTH(CURRENT_TIMESTAMP)
-            AND YEAR(created_at) = YEAR(CURRENT_TIMESTAMP)";
+    $sql = 'SELECT SUM(total) AS monthlyEarnings FROM payments WHERE MONTH(created_at) = MONTH(CURRENT_DATE())';
     $stmt = $db->prepare($sql);
     $stmt->execute();
-    $results = $stmt->fetchAll();
-    foreach ($results as $row) {
-        if ($row['total_earnings'] == null){
-            echo "0";
-        }
-        else{
-            echo number_format($row['total_earnings'],2);
-        }
-    }
+    $result = $stmt->fetch();
+    $monthlyEarnings = $result['monthlyEarnings'];
+    return $monthlyEarnings;
 }
 
-function get_yearly(){
+function calculateYearlyEarnings() {
     global $db;
-    $sql = "SELECT YEAR(CURRENT_TIMESTAMP) AS year,
-            SUM(total) AS total_earnings
-            FROM transactions
-            WHERE YEAR(created_at) = YEAR(CURRENT_TIMESTAMP)
-            GROUP BY YEAR(created_at) = YEAR(CURRENT_TIMESTAMP)";
+    $sql = 'SELECT SUM(total) AS yearlyEarnings FROM payments WHERE YEAR(created_at) = YEAR(CURRENT_DATE())';
     $stmt = $db->prepare($sql);
     $stmt->execute();
-    $results = $stmt->fetchAll();
-    if ($results){
-    foreach ($results as $row) {
-            echo number_format($row['total_earnings'],2);
-    }}
-    else{
-        echo "0";
-    }
+    $result = $stmt->fetch();
+    $yearlyEarnings = $result['yearlyEarnings'];
+    return $yearlyEarnings;
 }
 
-
-function get_pending(){
+function countTotalBoarders() {
     global $db;
-    $current_month = date('m');
-    $sql = "SELECT COUNT(*) AS total_pending
-            FROM laundry
-            WHERE status = 0
-            AND MONTH(created_at) = $current_month";
+    $sql = 'SELECT COUNT(*) AS totalBoarders FROM boarders';
     $stmt = $db->prepare($sql);
     $stmt->execute();
-    $results = $stmt->fetchAll();
-    foreach ($results as $row) {
-        echo $row['total_pending'];
-    }
+    $result = $stmt->fetch();
+    $totalBoarders = $result['totalBoarders'];
+    return $totalBoarders;
 }
-
-function get_processing(){
+function countTotalRooms() {
     global $db;
-    $current_month = date('m');
-    $sql = "SELECT COUNT(*) AS total_processing
-            FROM laundry
-            WHERE status = 1
-            AND MONTH(created_at) = $current_month";
+    $sql = 'SELECT COUNT(*) AS totalRooms FROM rooms';
     $stmt = $db->prepare($sql);
     $stmt->execute();
-    $results = $stmt->fetchAll();
-   if($results){
-    foreach ($results as $row) {
-        echo $row['total_processing'];
-    }}
-    else{
-        echo "0";
-    }
-}
-
-function get_folding(){
-    global $db;
-    $current_month = date('m');
-    $sql = "SELECT COUNT(*) AS total_folding
-            FROM laundry
-            WHERE status = 2
-            AND MONTH(created_at) = $current_month";
-    $stmt = $db->prepare($sql);
-    $stmt->execute();
-    $results = $stmt->fetchAll();
-    if($results){
-    foreach ($results as $row) {
-        echo $row['total_folding'];
-    }}
-    else{
-        echo "0";
-    }
-}
-
-function get_ready(){
-    global $db;
-    $current_month = date('m');
-    $sql = "SELECT COUNT(*) AS total_ready
-            FROM laundry
-            WHERE status = 3
-            AND MONTH(created_at) = $current_month";
-    $stmt = $db->prepare($sql);
-    $stmt->execute();
-    $results = $stmt->fetchAll();
-    if($results){
-    foreach ($results as $row) {
-        echo $row['total_ready'];
-    }}
-    else{
-        echo "0";
-    }
-}
-
-function get_claimed(){
-    global $db;
-    $current_month = date('m');
-    $sql = "SELECT COUNT(*) AS total_claimed
-        FROM laundry
-        WHERE status = 4
-        AND MONTH(created_at) = $current_month";
-    $stmt = $db->prepare($sql);
-    $stmt->execute();
-    $results = $stmt->fetchAll();
-    if ($results){
-    foreach ($results as $row) {
-        echo $row['total_claimed'];
-    }}
-    else{
-        echo "0";
-    }
-}
-
-function get_customers(){
-    global $db;
-    $sql = "SELECT COUNT(*) AS total_customers
-            FROM customers";
-    $stmt = $db->prepare($sql);
-    $stmt->execute();
-    $results = $stmt->fetchAll();
-    if ($results){
-    foreach ($results as $row) {
-        echo $row['total_customers'];
-    }}
-    else{
-        echo "0";
-    }
+    $result = $stmt->fetch();
+    $totalRooms = $result['totalRooms'];
+    return $totalRooms;
 }

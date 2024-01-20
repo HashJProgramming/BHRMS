@@ -1,8 +1,6 @@
 <?php
 include_once 'functions/connection.php';
 
-
-
 function room_lists (){
     global $db;
     $sql = 'SELECT * FROM rooms';
