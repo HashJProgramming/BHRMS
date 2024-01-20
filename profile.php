@@ -1,5 +1,7 @@
 <?php
-    include_once 'functions/authentication.php';
+include_once 'functions/authentication.php';
+include_once 'functions/connection.php';
+include_once 'functions/views/boarder-profile.php';
 ?>
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
@@ -40,7 +42,7 @@
             <div id="content">
                 <div class="container-fluid">
                     <div class="d-sm-flex justify-content-between align-items-center mb-4">
-                        <h3 class="text-dark mb-0">Profile [fullname]</h3>
+                        <h3 class="text-dark mb-0">Profile <?= $fullname ?></h3>
                     </div>
                     <div class="main-body">
                         <div class="row gutters-sm">
@@ -49,9 +51,9 @@
                                     <div class="card-body">
                                         <div class="text-center d-flex flex-column align-items-center"><img class="rounded-circle" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" width="150">
                                             <div class="mt-3">
-                                                <h4>[Boarders]</h4>
-                                                <p class="text-secondary mb-1">Full Stack Developer</p>
-                                                <p class="text-muted font-size-sm">Pagadian City</p>
+                                                <h4><?= $fullname ?></h4>
+                                                <p class="text-secondary mb-1"><?= $type ?></p>
+                                                <p class="text-muted font-size-sm"><?= $address ?></p>
                                             </div>
                                         </div>
                                     </div>
@@ -64,32 +66,32 @@
                                             <div class="col-sm-3">
                                                 <h6 class="mb-0">Full Name</h6>
                                             </div>
-                                            <div class="col-sm-9 text-secondary"><span>[Boarders]</span></div>
+                                            <div class="col-sm-9 text-secondary"><span><?= $fullname ?></span></div>
                                         </div>
                                         <hr>
                                         <div class="row">
                                             <div class="col-sm-3">
                                                 <h6 class="mb-0">Room & Rent</h6>
                                             </div>
-                                            <div class="col-sm-9 text-secondary"><span>Room #1 | ₱0.00</span></div>
+                                            <div class="col-sm-9 text-secondary"><span>Room #<?= $room ?> | ₱<?= number_format($rent) ?></span></div>
                                         </div>
                                         <hr>
                                         <div class="row">
                                             <div class="col-sm-3">
                                                 <h6 class="mb-0">Address</h6>
                                             </div>
-                                            <div class="col-sm-9 text-secondary"><span>Pagadian City</span></div>
+                                            <div class="col-sm-9 text-secondary"><span><?= $address ?></span></div>
                                         </div>
                                         <hr>
                                         <div class="row">
                                             <div class="col-sm-3">
                                                 <h6 class="mb-0">Phone</h6>
                                             </div>
-                                            <div class="col-sm-9 text-secondary"><span>0000000000000</span></div>
+                                            <div class="col-sm-9 text-secondary"><span><?= $phone ?></span></div>
                                         </div>
                                         <hr>
                                         <div class="row">
-                                            <div class="col-sm-12"><button class="btn btn-info" type="button" data-bs-target="#edit" data-bs-toggle="modal">View Proof of Identity</button></div>
+                                            <div class="col-sm-12"><a class="btn btn-info" type="button" href="functions/<?= $proof_of_identity ?>">View Proof of Identity</a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -101,59 +103,51 @@
                             <p class="text-primary m-0 fw-bold">Payments</p>
                         </div>
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-6 text-nowrap">
-                                    <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable"><label class="form-label">Show&nbsp;<select class="d-inline-block form-select form-select-sm">
-                                                <option value="10" selected="">10</option>
-                                                <option value="25">25</option>
-                                                <option value="50">50</option>
-                                                <option value="100">100</option>
-                                            </select>&nbsp;</label></div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="text-md-end dataTables_filter" id="dataTable_filter"><label class="form-label"><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
-                                </div>
-                            </div>
+
                             <div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
                                 <table class="table my-0" id="dataTable">
                                     <thead>
                                         <tr>
                                             <th>Boarders</th>
+                                            <th>Room</th>
                                             <th>Type</th>
+                                            <th>Rent</th>
+                                            <th>Total</th>
                                             <th>Amount</th>
-                                            <th>Date</th>
+                                            <th>Start date</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar1.jpeg">Airi Satou</td>
-                                            <td>Advance</td>
-                                            <td>₱0.00</td>
-                                            <td>2008/11/28</td>
-                                        </tr>
-                                        <tr></tr>
+                                        <?php
+                                        $sql = 'SELECT boarders.*, rooms.id as room, rooms.rent as rent, payments.total, payments.amount
+                                            FROM boarders
+                                            INNER JOIN rooms ON boarders.room = rooms.id
+                                            INNER JOIN payments ON boarders.id = payments.boarder WHERE boarders.id = ' . $id . '';
+                                        $stmt = $db->prepare($sql);
+                                        $stmt->execute();
+                                        $results = $stmt->fetchAll();
+
+                                        foreach ($results as $row) {
+                                        ?>
+                                            <tr>
+                                                <td><img class="rounded-circle me-2" width="30" height="30" src="functions/<?= $row['profile_picture'] ?>"><?= $row['fullname'] ?></td>
+                                                <td>Room # <?= $row['room'] ?></td>
+                                                <td><?= $row['type'] ?></td>
+                                                <td>₱<?= number_format($row['rent'], 2) ?></td>
+                                                <td>₱<?= number_format($row['total'], 2) ?></td>
+                                                <td>₱<?= number_format($row['amount'], 2) ?></td>
+                                                <td><?= $row['start_date'] ?></td>
+                                            </tr>
+                                        <?php
+                                        }
+                                        ?>
                                     </tbody>
                                     <tfoot>
                                         <tr></tr>
                                     </tfoot>
                                 </table>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6 align-self-center">
-                                    <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-                                        <ul class="pagination">
-                                            <li class="page-item disabled"><a class="page-link" aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
-                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
