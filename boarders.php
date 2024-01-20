@@ -1,5 +1,7 @@
 <?php
+include_once 'functions/connection.php';
 include_once 'functions/authentication.php';
+include_once 'functions/views/get-data.php';
 ?>
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
@@ -106,8 +108,7 @@ include_once 'functions/authentication.php';
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-floating"><select class="form-select form-select" aria-label="Floating label select example" id="floatingSelect-1" name="room" required="">
-                                            <option value="1">Room 1</option>
-                                            <option value="Female">Female</option>
+                                            <?php room_lists() ?>
                                         </select><label class="form-label" for="floatingSelect">Room#</label></div>
                                 </div>
                                 <div class="col-md-6">
