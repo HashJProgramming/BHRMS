@@ -28,5 +28,5 @@ if ($user && password_verify($password, $user['password'])) {
     header('location: ../dashboard.php');
 } else {
     // Show an error message
-    header('location: ../login.php?type=error&message=Wrong username or password');
+    header('location: ../index.php?type=error&message=Wrong username or password');
 }

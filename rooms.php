@@ -1,5 +1,5 @@
 <?php
-    include_once 'functions/authentication.php';
+include_once 'functions/authentication.php';
 ?>
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
@@ -123,8 +123,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="modal-footer"><button class="btn btn-primary" type="submit">Save</button></div>
+                </div>
+                <div class="modal-footer"><button class="btn btn-primary" type="submit">Save</button></div>
                 </form>
             </div>
         </div>
@@ -167,6 +167,13 @@
     <script src="assets/js/theme.js"></script>
     <script src="assets/js/sweetalert.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        $('a[data-bs-target="#update"]').on('click', function() {
+            var id = $(this).data('id');
+            console.log(id);
+            $('input[name="data_id"]').val(id);
+        });
+    </script>
 </body>
 
 </html>
